@@ -2,15 +2,15 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from 'react-apollo';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 // Components
 import NavBar from '../components/Navbar';
 import BookList from '../components/BookList';
 
 const client = new ApolloClient({
-    uri: 'http://localhost:4000/graphql'
+    uri: 'http://localhost:4000/graphql',
+    cache: new InMemoryCache()
 });
 
 const Home: NextPage = () => {
