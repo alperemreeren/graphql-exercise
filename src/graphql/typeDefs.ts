@@ -8,6 +8,7 @@ export const typeDefs = gql`
 
   # This "Book" type defines the queryable fields for every book in our data source.
   type Book {
+    _id: String
     title: String
     author: String
   }
